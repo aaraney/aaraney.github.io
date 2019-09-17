@@ -1,5 +1,8 @@
 language: python
-python: "3.7"
+
+python: 3.7
+
+branches: develop
 
 install:
   - pip install -U mkdocs-material
@@ -12,5 +15,3 @@ deploy:
  skip_cleanup: true
  github_token: $GITHUB_TOKEN
  target-branch: master
- on:
-   all_branches: true
