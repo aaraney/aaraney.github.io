@@ -7,11 +7,14 @@ branches: develop
 install:
   - pip install -U mkdocs-material
 
-script:
-  - mkdocs gh-deploy 
+script: true
+
+before_deploy:
+        - mkdocs build --clean --strict --verbose
 
 deploy:
- provider: pages
- skip_cleanup: true
- github_token: $GITHUB_TOKEN
- target-branch: master
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: site
+        target_branch: master
