@@ -1,0 +1,16 @@
+language: python
+python: "3.7"
+
+install:
+  - pip install -U mkdocs-material
+
+script:
+  - mkdocs gh-deploy 
+
+deploy:
+ provider: pages
+ skip_cleanup: true
+ github_token: $GITHUB_TOKEN
+ target-branch: master
+ on:
+   all_branches: true
